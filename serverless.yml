@@ -54,11 +54,11 @@ provider:
 #    - exclude-me-dir/**
 
 functions:
-  hello:
-    handler: handler.hello
+  menu:
+    handler: handler.menu
     events:
       - http:
-          path: hello
+          path: menu
           method: get
 
 #    The following are a few example events you can configure

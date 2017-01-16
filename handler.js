@@ -5,7 +5,7 @@ const cheerio = require('cheerio');
 
 const menuUrl = "http://marketcreationscafe.com/lunch/cleveland-oh/"
 
-module.exports.hello = (event, context, callback) => {
+module.exports.menu = (event, context, callback) => {
 
   request(menuUrl, function (error, response, html) {
     if (!error && response.statusCode == 200) {
