@@ -2,6 +2,7 @@
 
 const request = require('request');
 const cheerio = require('cheerio');
+const moment = require('moment-timezone');
 
 const menuUrl = "http://marketcreationscafe.com/lunch/cleveland-oh/"
 
@@ -40,12 +41,7 @@ module.exports.menu = (event, context, callback) => {
   }
 
   function isToday(date) {
-    var today = new Date().toLocaleString("en-US", {
-      timeZone: "America/New_York",
-      day: "2-digit",
-      month: "2-digit",
-      year: "2-digit"
-    });
+    var today = moment().tz("America/New_York").format('MM/DD/YY');
 
     return (date === today);
   }
