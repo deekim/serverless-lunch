@@ -6,10 +6,16 @@ provider:
 
 functions:
   menu:
-    handler: handler.menu
+    handler: market_creations/functions.menu
     events:
       - http:
-          path: menu
+          path: market_creations/menu
+          method: get
+  trucks:
+    handler: walnut_wednesday/functions.trucks
+    events:
+      - http:
+          path: walnut_wednesday/trucks
           method: get
 
 plugins:

@@ -9,7 +9,8 @@
     "request": "^2.79.0"
   },
   "devDependencies": {
-    "serverless-offline": "^3.14.2"
+    "serverless-offline": "^3.14.2",
+    "url": "^0.11.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
