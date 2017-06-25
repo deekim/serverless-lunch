@@ -15,7 +15,7 @@ module.exports.menu = (event, context, callback) => {
       var message;
       var date = data.shift();
       if (isToday(date)) {
-        message = data.join("\n");
+        message = data.join("\n\n");
       } else {
         message = "Hang tight, it looks like today's menu hasn't been posted yet.";
       }
@@ -29,8 +29,8 @@ module.exports.menu = (event, context, callback) => {
   function getData(html) {
     var data = [];
 
-    var $ = cheerio.load(html);
-    $('article div p').each(function(i, element) {
+    var $ = cheerio.load(html, { normalizeWhitespace: true });
+    $("div[id='content'] article div").children().each(function(i, element) {
       var item = $(this).text();
       if (item.trim()) {
         data.push(item);
