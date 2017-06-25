@@ -1,4 +1,4 @@
-# serverless-market-creations
+# serverless-lunch
 
 ## todo
 - add unit tests
